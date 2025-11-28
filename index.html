@@ -5,189 +5,232 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechVerse – BCA Department | Baba Farid College</title>
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Poppins', sans-serif;
-        }
+        *{margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
 
         body{
-            background:#0f0f17;
+            background:#0d0f1a;
             color:white;
             overflow-x:hidden;
         }
 
-        /* HEADER */
+        /* NAVBAR */
         header{
-            width:100%;
-            padding:20px 60px;
             position:fixed;
+            width:100%;
             top:0;
             left:0;
-            z-index:1000;
-            backdrop-filter:blur(10px);
-            background:rgba(255,255,255,0.05);
-            border-bottom:1px solid rgba(255,255,255,0.15);
-        }
-
-        nav{
+            padding:20px 60px;
             display:flex;
             justify-content:space-between;
             align-items:center;
+            background:rgba(255,255,255,0.05);
+            backdrop-filter:blur(12px);
+            border-bottom:1px solid rgba(255,255,255,0.1);
+            z-index:1000;
         }
 
-        nav h1{
-            font-size:26px;
-            background:linear-gradient(45deg,#00ffee,#6a5af9);
-            -webkit-background-clip:text;
+        header h1{
+            font-size:28px;
+            background:linear-gradient(45deg,#00ffe7,#6a5af9);
             -webkit-text-fill-color:transparent;
+            -webkit-background-clip:text;
             font-weight:700;
         }
 
         nav ul{
-            list-style:none;
             display:flex;
-            gap:25px;
+            list-style:none;
+            gap:30px;
         }
 
         nav ul li a{
+            color:white;
             text-decoration:none;
-            color:#fff;
             font-weight:500;
             transition:0.3s;
         }
 
         nav ul li a:hover{
-            color:#00ffee;
+            color:#00ffe7;
         }
 
-        /* HERO SECTION */
+        /* HERO */
         .hero{
-            height:95vh;
+            height:100vh;
+            background:url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1300&q=60') center/cover;
+            position:relative;
             display:flex;
             justify-content:center;
             align-items:center;
             text-align:center;
-            padding:20px;
-            background:linear-gradient(135deg,#1b1b2f,#16213e,#0f3460);
         }
 
-        .hero h2{
-            font-size:55px;
+        .hero::after{
+            content:'';
+            position:absolute;
+            top:0; left:0;
+            width:100%; height:100%;
+            background:rgba(0,0,0,0.6);
+        }
+
+        .hero-content{
+            position:relative;
+            z-index:1;
+        }
+
+        .hero-content h2{
+            font-size:60px;
             font-weight:800;
-            line-height:1.2;
-            background:linear-gradient(45deg,#00d9ff,#00ffb3);
-            -webkit-background-clip:text;
+            background:linear-gradient(45deg,#00d5ff,#00ffbf);
             -webkit-text-fill-color:transparent;
-            animation:fadeIn 1.5s ease;
+            -webkit-background-clip:text;
+            animation:fadeUp 1.5s ease;
         }
 
-        .hero p{
+        .hero-content p{
             margin-top:15px;
-            font-size:20px;
+            font-size:22px;
             opacity:0.9;
         }
 
-        @keyframes fadeIn {
-            from{opacity:0; transform:translateY(20px);}
+        @keyframes fadeUp{
+            from{opacity:0; transform:translateY(30px);}
             to{opacity:1; transform:translateY(0);}
         }
 
         /* SECTIONS */
         .section{
-            padding:80px 10%;
+            padding:90px 10%;
         }
 
         .title{
-            font-size:36px;
+            font-size:38px;
+            margin-bottom:25px;
             font-weight:700;
-            margin-bottom:30px;
-            background:linear-gradient(45deg,#00ffff,#6a5af9);
-            -webkit-background-clip:text;
+            background:linear-gradient(45deg,#00eaff,#835bff);
             -webkit-text-fill-color:transparent;
+            -webkit-background-clip:text;
         }
 
-        .glass-box{
+        .glass{
             background:rgba(255,255,255,0.08);
             padding:30px;
             border-radius:15px;
+            backdrop-filter:blur(12px);
             border:1px solid rgba(255,255,255,0.2);
-            backdrop-filter:blur(15px);
-            box-shadow:0 0 20px rgba(0,0,0,0.3);
         }
 
         /* CARDS */
         .cards{
-            margin-top:20px;
+            margin-top:30px;
             display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
-            gap:25px;
+            grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+            gap:30px;
         }
 
         .card{
+            background:rgba(255,255,255,0.07);
             padding:25px;
-            background:rgba(255,255,255,0.08);
             border-radius:15px;
-            border:1px solid rgba(255,255,255,0.2);
-            backdrop-filter:blur(15px);
+            border:1px solid rgba(255,255,255,0.1);
+            backdrop-filter:blur(10px);
             transition:0.4s;
         }
 
         .card:hover{
-            transform:translateY(-10px);
-            box-shadow:0 10px 30px rgba(0,255,255,0.2);
+            transform:translateY(-10px) scale(1.03);
+            box-shadow:0 15px 30px rgba(0,255,255,0.15);
         }
 
+        .card h3{
+            color:#00eaff;
+            margin-bottom:10px;
+        }
+
+        /* FACULTY */
+        .faculty-img{
+            width:100%;
+            height:200px;
+            border-radius:12px;
+            object-fit:cover;
+        }
+
+        /* GALLERY */
+        .gallery{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:20px;
+        }
+
+        .gallery img{
+            width:100%;
+            height:180px;
+            object-fit:cover;
+            border-radius:10px;
+            transition:0.3s;
+        }
+
+        .gallery img:hover{
+            transform:scale(1.05);
+        }
+
+        /* CONTACT */
         footer{
-            text-align:center;
+            margin-top:60px;
             padding:40px;
-            margin-top:50px;
             background:rgba(255,255,255,0.05);
-            border-top:1px solid rgba(255,255,255,0.15);
+            border-top:1px solid rgba(255,255,255,0.1);
+            text-align:center;
         }
 
-        .developers{
-            margin-top:10px;
-            color:#00ffee;
+        .social i{
+            font-size:22px;
+            margin:0 10px;
+            cursor:pointer;
+            color:#00ffe7;
+            transition:0.3s;
+        }
+
+        .social i:hover{
+            color:white;
         }
 
         #scrollBtn{
             position:fixed;
-            bottom:20px;
-            right:20px;
+            bottom:25px;
+            right:25px;
             background:#00ffee;
-            border:none;
             padding:15px 18px;
             border-radius:50%;
-            font-size:22px;
-            cursor:pointer;
+            border:none;
+            font-size:20px;
+            color:black;
             display:none;
-            color:#000;
         }
     </style>
 </head>
 <body>
 
 <header>
+    <h1>TechVerse</h1>
     <nav>
-        <h1>TechVerse</h1>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#courses">Courses</a></li>
-            <li><a href="#activities">Activities</a></li>
+            <li><a href="#why">Why Us</a></li>
+            <li><a href="#faculty">Faculty</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 </header>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <section class="hero">
-    <div>
+    <div class="hero-content">
         <h2>Welcome to TechVerse</h2>
         <p>BCA Department – Baba Farid College Bathinda</p>
     </div>
@@ -195,26 +238,21 @@
 
 <!-- ABOUT -->
 <section id="about" class="section">
-    <h2 class="title">About the BCA Department</h2>
-
-    <div class="glass-box">
+    <h2 class="title">About the Department</h2>
+    <div class="glass">
         <p>
-            <strong>TechVerse</strong> represents innovation, technology, and creativity.  
-            The BCA program at <strong>Baba Farid College, Bathinda</strong> focuses on real-world
-            problem-solving with modern tools and industry-level learning.
-        </p><br>
-        <p>
-            Students get hands-on experience in programming, app development, networking,
-            AI tools, data structures, and more.
+            TechVerse is the official digital identity of the <strong>BCA Department</strong> at 
+            <strong>Baba Farid College, Bathinda</strong>.
+            We focus on practical learning, modern skills, and real-world projects to build future-ready IT professionals.
         </p>
     </div>
 </section>
 
 <!-- COURSES -->
 <section id="courses" class="section">
-    <h2 class="title">Courses Offered</h2>
-
+    <h2 class="title">Our Courses</h2>
     <div class="cards">
+
         <div class="card">
             <h3>Web Development</h3>
             <p>HTML, CSS, JavaScript, React, Node.js</p>
@@ -226,44 +264,91 @@
         </div>
 
         <div class="card">
-            <h3>Cloud & Networking</h3>
-            <p>AWS Basics, Linux, Computer Networks</p>
+            <h3>Cyber Security</h3>
+            <p>Ethical hacking, Kali Linux, Network Defense</p>
         </div>
 
         <div class="card">
-            <h3>Database Systems</h3>
-            <p>SQL, MySQL, MongoDB</p>
+            <h3>Cloud Computing</h3>
+            <p>AWS, Azure, Cloud Architecture</p>
         </div>
     </div>
 </section>
 
-<!-- ACTIVITIES -->
-<section id="activities" class="section">
-    <h2 class="title">Activities & Events</h2>
+<!-- WHY CHOOSE US -->
+<section id="why" class="section">
+    <h2 class="title">Why Choose TechVerse?</h2>
+    <div class="cards">
+
+        <div class="card">
+            <h3>Modern Labs</h3>
+            <p>Advanced computer labs with latest systems.</p>
+        </div>
+
+        <div class="card">
+            <h3>Experienced Faculty</h3>
+            <p>Highly skilled teachers guiding students.</p>
+        </div>
+
+        <div class="card">
+            <h3>Placement Training</h3>
+            <p>Interview prep, internships & industry exposure.</p>
+        </div>
+
+        <div class="card">
+            <h3>Tech Events</h3>
+            <p>Hackathons, coding contests, tech fests.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FACULTY -->
+<<!-- FACULTY -->
+<s<!-- FACULTY -->
+<section id="faculty" class="section">
+    <h2 class="title">Our Faculty</h2>
 
     <div class="cards">
+
         <div class="card">
-            <h3>Tech Workshops</h3>
-            <p>Learn trending technology and coding tools.</p>
+            <h3>HOD – Amandeep Singh</h3>
+            <p>Head of Department (BCA)</p>
         </div>
 
         <div class="card">
-            <h3>Annual Hackathon</h3>
-            <p>A 24-hour coding event to test your creativity.</p>
+            <h3>Sukhjinder Ma’am</h3>
+            <p>Programming Faculty & Mentor </p>
         </div>
 
         <div class="card">
-            <h3>Educational Tours</h3>
-            <p>Visit top IT companies & industrial sectors.</p>
+            <h3>Nitika Ma’am</h3>
+            <p>Web Development Faculty</p>
         </div>
+
+        <div class="card">
+            <h3>Jyoti Ma’am</h3>
+            <p>Computer Applications Faculty</p>
+        </div>
+
+        <div class="card">
+            <h3>Ramampreet Ma’am</h3>
+            <p>Programming Faculty</p>
+        </div>
+
+        <div class="card">
+            <h3>Lakhvinder Ma’am</h3>
+            <p>IT & Software Faculty</p>
+        </div>
+
     </div>
 </section>
 
-<!-- CONTACT (UPDATED) -->
+
+
+<!-- CONTACT -->
 <section id="contact" class="section">
     <h2 class="title">Contact Us</h2>
-
-    <div class="glass-box">
+    <div class="glass">
         <p><strong>Address:</strong> Baba Farid College, Deon, Bathinda</p>
         <p><strong>Email:</strong> neeraj281021@gmail.com</p>
         <p><strong>Phone:</strong> 8268900093</p>
@@ -272,28 +357,31 @@
 
 <footer>
     <p>© 2025 TechVerse – BCA Department</p>
-    <div class="developers">
-        Developed By: <br>
-        <strong>Neeraj Kumar | Suhani Sharma | Rupinderjit</strong>
+    <p>Developed By: <strong>Neeraj Kumar | Suhani Sharma | Rupinderjit</strong></p>
+
+    <div class="social">
+        <i>🌐</i>
+        <i>📘</i>
+        <i>📸</i>
     </div>
 </footer>
 
 <button id="scrollBtn">↑</button>
 
 <script>
-    const btn = document.getElementById("scrollBtn");
+const btn = document.getElementById("scrollBtn");
 
-    window.onscroll = function(){
-        if(document.documentElement.scrollTop > 300){
-            btn.style.display = "block";
-        } else {
-            btn.style.display = "none";
-        }
-    };
+window.onscroll = function(){
+    if(document.documentElement.scrollTop > 300){
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+};
 
-    btn.onclick = function(){
-        window.scrollTo({top:0, behavior:"smooth"});
-    };
+btn.onclick = function(){
+    window.scrollTo({top:0, behavior:"smooth"});
+};
 </script>
 
 </body>
